@@ -1,4 +1,4 @@
-from symnode import app
+from remote import app
 
 
 if __name__ == "__main__":
