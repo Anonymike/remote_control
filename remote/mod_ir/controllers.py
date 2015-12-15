@@ -13,9 +13,10 @@ def run_command(device, command):
     call(args)
 
 
-@mod_ir.route('/send', methods=['PUT'])
+@mod_ir.route('/send', methods=['POST'])
 def send_command():
     params = request.args
-    target = str(params.get('device'))
+    device = str(params.get('device'))
     command = str(params.get('command'))
+    run_command(device, command)
     return "lol okay!"
