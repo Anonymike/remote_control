@@ -22,6 +22,12 @@ def send_command():
     run_command(device, command)
     return "okay"
 
+@mod_ir.route('/tv/on', methods=['POST'])
+@mod_ir.route('/tv/off', methods=['POST'])
+def power_tv():
+    run_command('sharp', 'KEY_POWER')
+    return "okay"
+
 @mod_ir.route('/tv', methods=['POST'])
 def select_tv():
     params = request.args
