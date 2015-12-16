@@ -10,11 +10,15 @@ def run_cmd(device, command):
 
 def run_script(commands):
     for command in commands:
-        device = command[0]
-        key = command[1]
-        arg_str = 'irsend SEND_ONCE %s %s' % (device, key)
-        args = shlex.split(arg_str)
-        call(args)
+        if command[0] == 'sleep':
+            sleep_timer = float(command[1])
+            sleep(sleep_timer)
+        else:
+            device = command[0]
+            key = command[1]
+            arg_str = 'irsend SEND_ONCE %s %s' % (device, key)
+            args = shlex.split(arg_str)
+            call(args)
 
 def tv_fox():
     #7.1
@@ -43,7 +47,8 @@ def tv_bot():
                 ['sharp', 'KEY_SELECT'],
                 ['sharp', 'KEY_LEFT'],
                 ['sharp', 'KEY_UP'],
-                ['sharp', 'KEY_SELECT']
+                ['sharp', 'KEY_SELECT'],
+                ['sleep', 0.5],
                 ['sharp', 'KEY_VIDEO'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_DOWN'],
