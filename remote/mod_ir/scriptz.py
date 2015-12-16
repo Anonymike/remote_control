@@ -37,19 +37,9 @@ def tv_fox():
 
 def tv_bot():
     #7.1 > bot
-    commands = [['sharp','KEY_TUNER'],
-                ['sharp', 'KEY_LEFT'],
-                ['sharp', 'KEY_DOWN'],
-                ['sharp', 'KEY_SELECT'],
-                ['sharp', 'KEY_DOWN'],
-                ['sharp', 'KEY_SELECT'],
-                ['sharp', 'KEY_DOWN'],
-                ['sharp', 'KEY_SELECT'],
-                ['sharp', 'KEY_LEFT'],
-                ['sharp', 'KEY_UP'],
-                ['sharp', 'KEY_SELECT'],
-                ['sleep', 0.5],
-                ['sharp', 'KEY_VIDEO'],
+    tv_fox()
+    sleep(1)
+    commands = ['sharp', 'KEY_VIDEO'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_SELECT']]
