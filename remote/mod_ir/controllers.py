@@ -28,6 +28,11 @@ def power_tv():
     run_command('sharp', 'KEY_POWER')
     return "okay"
 
+@mod_ir.route('/tv/input', methods=['POST'])
+def input_tv():
+    run_command('sharp', 'KEY_VIDEO')
+    return "okay"
+
 @mod_ir.route('/tv', methods=['POST'])
 def select_tv():
     params = request.args
