@@ -24,5 +24,14 @@ def send_command():
 
 @mod_ir.route('/tv', methods=['POST'])
 def select_tv():
-    tv_mode()
+    params = request.args
+    channel = str(params.get('channel'))
+    if channel == 'fox':
+        tv_fox()
+    elif channel == 'nbc':
+        tv_nbc()
+    elif channel == 'cbs':
+        tv_cbs()
+    else:
+        tv_fox()
     return "okay"
