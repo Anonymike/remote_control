@@ -38,7 +38,7 @@ def tv_fox():
 def tv_bot():
     #7.1 > bot
     tv_fox()
-    sleep(3)
+    sleep(4)
     commands = [['sharp', 'KEY_VIDEO'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_DOWN'],
@@ -49,7 +49,7 @@ def tv_bot():
 def tv_chrome():
     #7.1 > chrome
     tv_fox()
-    sleep(3)
+    sleep(4)
     commands = [['sharp', 'KEY_VIDEO'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_DOWN'],

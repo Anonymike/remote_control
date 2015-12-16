@@ -50,3 +50,25 @@ def select_tv():
     else:
         tv_fox()
     return "okay"
+
+@mod_ir.route('/soundbar/on', methods=['POST'])
+@mod_ir.route('/soundbar/off', methods=['POST'])
+def power_soundbar():
+    run_command('soundbar', 'KEY_POWER')
+    return "okay"
+
+@mod_ir.route('/soundbar', methods=['POST'])
+def soundbar_buttonz():
+    params = request.args
+    button = str(params.get('button'))
+    if button == 'vol_up':
+        run_command('soundbar', 'KEY_VOLUMEUP')
+    elif button == 'vol_down':
+        run_command('soundbar', 'KEY_VOLUMEDOWN')
+    elif button == 'mute':
+        run_command('soundbar', 'KEY_MUTE')
+    elif button == 'optical':
+        run_command('soundbar', 'BTN_0')
+    elif button == 'bot':
+        run_command('soundbar', 'BTN_1')
+    return "okay"
