@@ -40,6 +40,8 @@ def select_tv():
         tv_cbs()
     elif channel == 'bot':
         tv_bot()
+    elif channel == 'chrome':
+        tv_chrome()
     else:
         tv_fox()
     return "okay"
