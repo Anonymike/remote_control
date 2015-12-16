@@ -15,7 +15,6 @@ def run_script(commands):
         arg_str = 'irsend SEND_ONCE %s %s' % (device, key)
         args = shlex.split(arg_str)
         call(args)
-        sleep(0.3)
 
 def tv_mode():
     commands = [['sharp','KEY_TUNER'],
@@ -24,14 +23,9 @@ def tv_mode():
                 ['sharp', 'KEY_SELECT'],
                 ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_SELECT'],
-                ['sharp', 'KEY_UP'],
-                ['sharp', 'KEY_UP'],
-                ['sharp', 'KEY_UP'],
+                ['sharp', 'KEY_DOWN'],
                 ['sharp', 'KEY_SELECT'],
-                ['sharp', 'KEY_RIGHT'],
-                ['sharp', 'KEY_RIGHT'],
-                ['sharp', 'KEY_DOWN'],
-                ['sharp', 'KEY_DOWN'],
-                ['sharp', 'KEY_DOWN'],
+                ['sharp', 'KEY_LEFT'],
+                ['sharp', 'KEY_UP'],
                 ['sharp', 'KEY_SELECT']]
     run_script(commands)
