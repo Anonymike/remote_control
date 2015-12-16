@@ -4,6 +4,7 @@ from flask import Blueprint, request, Response, \
                   jsonify, g, session
 
 from subprocess32 import call
+from .scriptz import *
 
 mod_ir = Blueprint('ir', __name__, url_prefix='/ir')
 
@@ -19,4 +20,9 @@ def send_command():
     device = str(params.get('device'))
     command = str(params.get('command'))
     run_command(device, command)
-    return "lol okay!"
+    return "okay"
+
+@mod_ir.route('/tv', methods=['POST'])
+def select_tv():
+    tv_mode()
+    return "okay"
