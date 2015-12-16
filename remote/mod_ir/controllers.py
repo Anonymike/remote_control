@@ -38,6 +38,8 @@ def select_tv():
         tv_nbc()
     elif channel == 'cbs':
         tv_cbs()
+    elif channel == 'bot':
+        tv_bot()
     else:
         tv_fox()
     return "okay"
